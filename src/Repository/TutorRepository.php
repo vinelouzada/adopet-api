@@ -39,6 +39,48 @@ class TutorRepository extends ServiceEntityRepository
         }
     }
 
+    public function updateAll(Tutor $entity, array $updatedData, bool $flush = false): void
+    {
+        $entity->setName($updatedData['name']);
+        $entity->setPhone($updatedData['phone']);
+        $entity->setCity($updatedData['city']);
+        $entity->setAbout($updatedData['about']);
+        $entity->setPhone($updatedData['phone']);
+
+        if ($flush){
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function update(Tutor $entity, array $updatedData, bool $flush = false): void
+    {
+        if (isset($updatedData['name'])){
+            $entity->setName($updatedData['name']);
+        }
+
+        if (isset($updatedData['phone'])){
+            $entity->setPhone($updatedData['phone']);
+        }
+
+        if (isset($updatedData['city'])){
+            $entity->setCity($updatedData['city']);
+        }
+
+        if (isset($updatedData['about'])){
+            $entity->setAbout($updatedData['about']);
+        }
+
+        if (isset($updatedData['phone'])){
+            $entity->setPhone($updatedData['phone']);
+        }
+
+        if ($flush){
+            $this->getEntityManager()->flush();
+        }
+    }
+
+
+
 //    /**
 //     * @return Tutor[] Returns an array of Tutor objects
 //     */

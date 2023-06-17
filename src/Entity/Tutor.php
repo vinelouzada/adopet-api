@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TutorRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TutorRepository::class)]
 class Tutor
